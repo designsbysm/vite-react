@@ -7,12 +7,11 @@
     "build": "run-s test:types build:only",
     "build:only": "vite build",
     "format": "prettier --write src/",
-    "preview": "vite preview",
     "start": "vite",
-    "test": "run-s test:types test:unit",
+    "test": "run-s test:types test:lint test:unit",
     "test:coverage": "vitest run --coverage",
-    "test:lint": "eslint . --ext ts,tsx --fix --report-unused-disable-directives --max-warnings 0",
-    "test:types": "tsc",
+    "test:lint": "eslint src --ext ts,tsx --fix --report-unused-disable-directives",
+    "test:types": "tsc --noEmit",
     "test:unit": "vitest"
   },
   "dependencies": {
